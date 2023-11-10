@@ -1,4 +1,6 @@
+import MainLayout from "@/components/MainLayout";
 import "./globals.css";
+import MenuContextProvider from "@/context/MenuContext";
 
 export const metadata = {
    title: "Nextjs Tailwind SandBox",
@@ -9,7 +11,9 @@ export default function RootLayout({ children }) {
    return (
       <html lang="en">
          <body>
-            {children}
+            <MenuContextProvider>
+               <MainLayout>{ children }</MainLayout>
+            </MenuContextProvider>
          </body>
       </html>
    );
